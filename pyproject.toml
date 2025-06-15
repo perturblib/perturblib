@@ -1,0 +1,107 @@
+[tool.poetry]
+name = "perturb_lib"
+version = "0.1.0"
+description = "Perturb-lib: Software toolkit for modeling perturbations across experimental contexts"
+authors = ["BiomedicalAI, GSK.ai"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.12.4"
+pandas = "^2.2.2"
+torch = "^2.6.0"
+requests = "^2.32.3"
+tqdm = "^4.66.4"
+scikit-learn = "^1.5.0"
+pytorch-lightning = "^2.2.5"
+matplotlib = "^3.9.0"
+session-info = "^1.0.0"
+fire = "^0.7.0"
+scanpy = "^1.11.0"
+appdirs = "^1.4.4"
+urllib3 = "^2.2.2"
+cmappy = "^4.0.1"
+openpyxl = "^3.1.4"
+numpy = "1.26.4"
+scipy = "^1.15.2"
+pyyaml = "^6.0.1"
+polars = {extras = ["pyarrow"], version = "^1.23.0"}
+tabulate = "^0.9.0"
+jupyter = "^1.1.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.2"
+mypy = "^1.10.0"
+pre-commit-hooks = "^4.6.0"
+pre-commit = "^3.7.1"
+ruff = "^0.4.9"
+types-tabulate = "^0.9.0.20241207"
+types-requests = "^2.32.0.20240602"
+types-pyyaml = "^6.0.12.20240311"
+tensorboard = "^2.17.0"
+seaborn = "^0.13.2"
+typing-extensions = "^4.12.2"
+jupyter = "^1.1.1"
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^7.0.0"
+sphinx_autodoc_typehints = "^1.0"
+nbsphinx = "^0.9"
+pydata-sphinx-theme = "^0.12.0"
+ipython = "^8.26.0"
+jupyter = "^1.0.0"
+
+[tool.poetry.group.benchmarking.dependencies]
+catboost = "^1.2.5"
+xgboost = "^2.0.3"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+extend-select = ["I", "D"]  # Enable import sorting and doc styling
+ignore = ["D104", "D105", "D107", "D205", "D417", "D415", "F403"]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"tests/*" = ["D100", "D101", "D102", "D103"]  # Disable requirements for docstrings in unit tests
+"scripts/*" = ["D100", "D101", "D102", "D103"]  # Disable requirements for docstrings in scripts folder
+"docs/*" = ["D100", "D101", "D102", "D103"]  # Disable checks in documentation folder
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.mypy]
+ignore_missing_imports = true
+check_untyped_defs = true
+allow_redefinition = true
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "."
+]
+filterwarnings = [
+    "ignore:Call to deprecated create function FieldDescriptor",
+    "ignore:Call to deprecated create function Descriptor",
+    "ignore:Call to deprecated create function EnumDescriptor",
+    "ignore:Call to deprecated create function EnumValueDescriptor",
+    "ignore:Call to deprecated create function FileDescriptor",
+    "ignore:Call to deprecated create function OneofDescriptor",
+    "ignore:.*does not have many workers",
+    "ignore:MPS available but not used",
+    "ignore:An input array is constant",
+    "ignore:distutils Version classes are deprecated",
+    "ignore: invalid escape sequence",
+    "ignore:.*Type google._upb.*:DeprecationWarning",
+    "ignore:.*pkg_resources is deprecated as an API.*:DeprecationWarning",
+    "ignore:.*pkg_resources.declare_namespace.*:DeprecationWarning",
+    "ignore:.*__version_info__.*:DeprecationWarning",
+    "ignore:.*Using threadpoolctl may cause crashes or deadlocks.*:RuntimeWarning",
+    "ignore:.*checkpoints exists and is not empty."
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

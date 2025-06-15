@@ -1,0 +1,47 @@
+# Training configurations for LPM model trained on LINCS data.
+
+environment_configs:
+  - seed: 13
+  - seed: 14
+  - seed: 15
+  - seed: 16
+  - seed: 17
+
+data_configs:
+  - training_contexts: LINCS
+    val_and_test_perturbations_selected_from: HumanCellLine_HT29_L1000-RNA-seq_LINCS-CMap2020_CMP
+    data_storage_type: in_memory
+  - training_contexts: LINCS
+    val_and_test_perturbations_selected_from: HumanCellLine_HELA_L1000-RNA-seq_LINCS-CMap2020_CMP
+    data_storage_type: in_memory
+  - training_contexts: LINCS
+    val_and_test_perturbations_selected_from: HumanCellLine_HA1E_L1000-RNA-seq_LINCS-CMap2020_CMP
+    data_storage_type: in_memory
+  - training_contexts: LINCS
+    val_and_test_perturbations_selected_from: HumanCellLine_MCF7_L1000-RNA-seq_LINCS-CMap2020_XPR
+    data_storage_type: in_memory
+  - training_contexts: LINCS
+    val_and_test_perturbations_selected_from: HumanCellLine_HT29_L1000-RNA-seq_LINCS-CMap2020_XPR
+    data_storage_type: in_memory
+  - training_contexts: LINCS
+    val_and_test_perturbations_selected_from: HumanCellLine_A549_L1000-RNA-seq_LINCS-CMap2020_XPR
+    data_storage_type: in_memory
+
+
+model_configs:
+  - model_id: LPM
+    model_args:
+      optimizer_name: AdamW
+      learning_rate: 0.002
+      learning_rate_decay: 0.97
+      num_layers: 2
+      hidden_dim: 256
+      dropout: 0.1
+      batch_size: 1000
+      embedding_dim: 128
+      lightning_trainer_pars:
+        deterministic: True
+        enable_checkpointing: False
+        accelerator: auto
+        max_epochs: 50
+    save_model_after_training: True

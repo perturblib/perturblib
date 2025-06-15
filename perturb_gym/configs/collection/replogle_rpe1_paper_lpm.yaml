@@ -1,0 +1,32 @@
+# Training configurations for production model trained on Replogle22 data.
+
+environment_configs:
+  - seed: 13
+  - seed: 14
+  - seed: 15
+  - seed: 16
+  - seed: 17
+
+data_configs:
+  - training_contexts: Replogle
+    val_and_test_perturbations_selected_from: HumanCellLine_RPE1_10xChromium3-scRNA-seq_Replogle22
+    data_storage_type: in_memory
+
+
+model_configs:
+  - model_id: LPM
+    model_args:
+      optimizer_name: AdamW
+      learning_rate: 0.005
+      learning_rate_decay: 0.99
+      num_layers: 2
+      hidden_dim: 512
+      dropout: 0.0
+      batch_size: 5000
+      embedding_dim: 32
+      lightning_trainer_pars:
+        deterministic: True
+        enable_checkpointing: False
+        accelerator: auto
+        max_epochs: 50
+    save_model_after_training: True

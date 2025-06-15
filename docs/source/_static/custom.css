@@ -1,0 +1,151 @@
+a {
+    color: coral;
+}
+
+a.reference.internal:hover {
+    color: darkorange;
+}
+
+a.reference.internal.current {
+    color: coral;
+}
+
+a.reference.internal.current:hover {
+    color: darkorange;
+}
+
+.vp-sidebar .toctree-l1.current a {
+    border-left: 0.5rem solid coral;
+}
+
+.vp-sidebar .toctree-l1 a.current {
+    border-left-color: coral;
+}
+
+a:link, a:visited {
+    color: darkorange;
+}
+
+.viewcode-link {
+    color: darkorange;
+}
+
+code {
+    color: darkorange;
+}
+
+.sig-name {
+    color: darkorange;
+}
+
+.align-default {
+    text-align: left;
+}
+
+dt {
+    padding-bottom: 0.5em;
+}
+
+p {
+    font-size: 0.8em;
+}
+
+a {
+    font-size: 0.9em;
+}
+
+
+img {
+    width: 100%;
+}
+
+.pre {
+    padding: 0;
+}
+
+pre {
+    background-color: ghostwhite;
+}
+
+
+.content code {
+    color: coral;
+    background-color: inherit;
+    padding: 0;
+}
+
+dd.field-odd p strong {
+    margin-left: 0.05em;
+}
+
+dl.method {
+    border: 2px solid darkorange;
+    padding-left: 0.5em;
+}
+
+dl.property {
+    border: 2px solid darkorange;
+    padding-left: 0.5em;
+}
+
+/* #perturb-lib h1 {
+  font-size: 0;
+}*/
+
+h1 {
+  font-size: 0;
+  color: darkorange;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: darkorange;
+}
+
+
+code.literal {
+    background-color: inherit;
+    border: 0;
+}
+
+.navbar-nav li {
+    font-weight: 450;
+    font-size: 1em;
+    padding: 0 0.5rem;
+    color: 	#585858;
+}
+
+
+#perturb-lib p {
+    font-size: 1.5em;
+}
+
+#perturb-lib a {
+    font-size: 1em;
+}
+
+#tutorials a {
+    font-size: 1em;
+}
+
+.bd-sidebar .nav li>a {
+    font-size: 1.0em;
+}
+
+
+.bd-header .navbar-nav>.active>.nav-link {
+    color: darkorange;
+}
+
+
+.toc-entry a.nav-link.active {
+    color: darkorange;
+}
+
+html[data-theme=light] {
+    --pst-color-primary: coral;
+}
+
+table {
+    width: auto;
+}

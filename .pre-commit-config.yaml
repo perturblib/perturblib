@@ -1,0 +1,31 @@
+# See https://pre-commit.com/ for usage and config
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.4.0
+  hooks:
+    - id: check-toml
+    - id: check-yaml
+    - id: end-of-file-fixer
+    - id: trailing-whitespace
+    - id: check-merge-conflict
+- repo: local
+  hooks:
+    - id: ruff
+      name: ruff
+      entry: poetry run ruff check --force-exclude
+      language: system
+      types_or: [ python, pyi, jupyter ]
+      args: [ --fix ]
+      require_serial: true
+    - id: ruff-format
+      name: ruff-format
+      entry: poetry run ruff format --force-exclude
+      language: system
+      types_or: [ python, pyi, jupyter ]
+      require_serial: true
+    - id: mypy
+      name: mypy
+      entry: poetry run mypy
+      types: [python]
+      language: system
+      require_serial: true
