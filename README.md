@@ -27,7 +27,7 @@ predicts unseen perturbation outcomes, and its information-rich generalisable em
 directly applicable to various other biological discovery tasks.
 
 ## Documentation including tutorials
-Link to documentation: <LINK HERE>
+Documentation can be found [here](https://perturblib.github.io/perturblib/)
 
 In order to train an LPM on the LINCS L1000 data, as done in the paper, use the following command:
 ```bash
@@ -49,6 +49,7 @@ Each of the above will train 5 models with different random seeds.
 
 ## Authors
 
+For inquiries regarding this code base, please reach out to <biomedical-ai-external@gsk.com>
 
 ### Core maintainers
 | Name | Institution |                 Contact                  |
