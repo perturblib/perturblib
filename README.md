@@ -75,3 +75,5 @@ For inquiries regarding this code base, please reach out to <biomedical-ai-exter
   year={2025}
 }
 ```
+
+Source code DOI: [![DOI](https://zenodo.org/badge/996067484.svg)](https://doi.org/10.5281/zenodo.15671137)
